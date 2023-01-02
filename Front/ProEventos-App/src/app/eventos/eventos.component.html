@@ -3,13 +3,12 @@
 
 <div class="form-inline">
   <div class="form-group mb-2">
+    <label class="mr-2">Filtro: </label>
     <input type="text" class="form-control mr-2" placeholder="buscar"
     [(ngModel)]="filtroLista"
     >
-    <button class="btn btn-outline-success">Buscar</button>
   </div>
 </div>
-<h3>Filtro: {{filtroLista}}</h3>
 <table class="table table-striped text-left">
   <thead class="thead-dark">
     <tr>
@@ -39,10 +38,13 @@
       <td>{{evento.eventoId}}</td>
       <td>{{evento.tema}}</td>
       <td>{{evento.local}}</td>
-      <td>{{evento.data}}</td>
+      <td>{{evento.dataEvento}}</td>
       <td>{{evento.qtdPessoas}}</td>
-      <td>{{evento.local}}</td>
-      <td></td>
+      <td>{{evento.lote}}</td>
+      <td>
+          <button type="button" class="btn-primary btn-sm mr-2">Editar</button>
+          <button type="button" class="btn-danger btn-sm">Excluir</button>
+      </td>
     </tr>
   </tbody>
   <tfoot *ngIf="!eventos.length">
@@ -52,3 +54,4 @@
   </tfoot>
 </table>
 
+{{eventos | json}}
